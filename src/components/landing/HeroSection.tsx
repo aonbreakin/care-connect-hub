@@ -59,8 +59,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="relative hidden lg:block"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-              <img
+            <div className="relative rounded-3xl overflow-hidden shadow-elevated bg-coral-light/50">
                 src={heroImage}
                 alt="Happy family with trusted caregiver in a warm home setting"
                 className="w-full h-auto object-cover"
