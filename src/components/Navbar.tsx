@@ -1,10 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X } from "lucide-react";
+import { Heart, Menu, X, LogOut } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -26,8 +34,21 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">Log In</Button>
-          <Button variant="hero" size="sm">Sign Up Free</Button>
+          {user ? (
+            <>
+              <span className="text-sm text-muted-foreground">
+                {user.user_metadata?.full_name || user.email}
+              </span>
+              <Button variant="ghost" size="sm" onClick={handleSignOut}>
+                <LogOut className="w-4 h-4 mr-1" /> Log Out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" size="sm" onClick={() => navigate("/auth")}>Log In</Button>
+              <Button variant="hero" size="sm" onClick={() => navigate("/auth")}>Sign Up Free</Button>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -44,8 +65,16 @@ const Navbar = () => {
           <a href="#services" className="block py-2 text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Services</a>
           <a href="#how-it-works" className="block py-2 text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>How It Works</a>
           <div className="flex gap-2 pt-2">
-            <Button variant="ghost" size="sm" className="flex-1">Log In</Button>
-            <Button variant="hero" size="sm" className="flex-1">Sign Up</Button>
+            {user ? (
+              <Button variant="ghost" size="sm" className="flex-1" onClick={() => { handleSignOut(); setIsOpen(false); }}>
+                <LogOut className="w-4 h-4 mr-1" /> Log Out
+              </Button>
+            ) : (
+              <>
+                <Button variant="ghost" size="sm" className="flex-1" onClick={() => { navigate("/auth"); setIsOpen(false); }}>Log In</Button>
+                <Button variant="hero" size="sm" className="flex-1" onClick={() => { navigate("/auth"); setIsOpen(false); }}>Sign Up</Button>
+              </>
+            )}
           </div>
         </div>
       )}
