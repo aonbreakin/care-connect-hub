@@ -60,6 +60,7 @@ const HeroSection = () => {
             className="relative hidden lg:block"
           >
             <div className="relative rounded-3xl overflow-hidden shadow-elevated bg-coral-light/50">
+              <img
                 src={heroImage}
                 alt="Happy family with trusted caregiver in a warm home setting"
                 className="w-full h-auto object-cover"
