@@ -6,6 +6,7 @@ export type Profile = {
   full_name: string | null;
   phone: string | null;
   avatar_url: string | null;
+  status: string;
 };
 
 export type Certificate = {
@@ -45,7 +46,7 @@ export type CaregiverProfile = {
 };
 
 export const useDashboardData = (user: User | null) => {
-  const [profile, setProfile] = useState<Profile>({ full_name: null, phone: null, avatar_url: null });
+  const [profile, setProfile] = useState<Profile>({ full_name: null, phone: null, avatar_url: null, status: "member" });
   const [role, setRole] = useState<string | null>(null);
   const [certificates, setCertificates] = useState<Certificate[]>([]);
   const [rewards, setRewards] = useState<Reward[]>([]);
@@ -63,7 +64,7 @@ export const useDashboardData = (user: User | null) => {
   const fetchProfile = async () => {
     const { data } = await supabase
       .from("profiles")
-      .select("full_name, phone, avatar_url")
+      .select("full_name, phone, avatar_url, status")
       .eq("user_id", user!.id)
       .single();
     if (data) setProfile(data);
