@@ -14,6 +14,83 @@ export type Database = {
   }
   public: {
     Tables: {
+      certificate_rewards: {
+        Row: {
+          awarded_at: string
+          certificate_id: string
+          id: string
+          reward_name: string
+          reward_type: string
+          user_id: string
+        }
+        Insert: {
+          awarded_at?: string
+          certificate_id: string
+          id?: string
+          reward_name: string
+          reward_type?: string
+          user_id: string
+        }
+        Update: {
+          awarded_at?: string
+          certificate_id?: string
+          id?: string
+          reward_name?: string
+          reward_type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "certificate_rewards_certificate_id_fkey"
+            columns: ["certificate_id"]
+            isOneToOne: false
+            referencedRelation: "certificates"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      certificates: {
+        Row: {
+          certificate_name: string
+          certificate_type: string
+          created_at: string
+          file_url: string
+          id: string
+          notes: string | null
+          status: string
+          updated_at: string
+          user_id: string
+          verified_at: string | null
+          verified_by: string | null
+        }
+        Insert: {
+          certificate_name: string
+          certificate_type: string
+          created_at?: string
+          file_url: string
+          id?: string
+          notes?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Update: {
+          certificate_name?: string
+          certificate_type?: string
+          created_at?: string
+          file_url?: string
+          id?: string
+          notes?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
