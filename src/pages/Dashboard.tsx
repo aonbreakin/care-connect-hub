@@ -121,7 +121,7 @@ const Dashboard = () => {
                 <h1 className="text-2xl font-bold text-foreground">{profile.full_name || "Your Profile"}</h1>
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-2">
                   <Badge variant="secondary" className="capitalize">
-                    {isCaregiver ? "Caregiver" : "Member"}
+                    {profile.status === "caregiver" ? "Caregiver" : "Member"}
                   </Badge>
                   {rewards.length > 0 && (
                     <Badge className="bg-amber-100 text-amber-800 border-amber-200">
