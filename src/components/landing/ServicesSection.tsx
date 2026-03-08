@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-import { Baby, Stethoscope, GraduationCap, Heart, Home, Sparkles } from "lucide-react";
-
-import { motion } from "framer-motion";
 import { Sparkles, Heart } from "lucide-react";
 
 const services = [
