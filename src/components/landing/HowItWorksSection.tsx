@@ -11,8 +11,8 @@ const steps = [
   {
     icon: Search,
     step: "02",
-    title: "Get AI-Matched",
-    description: "Our AI analyzes your needs and matches you with the best-fit verified caregivers.",
+    title: "Browse Caregivers",
+    description: "Search and filter verified caregivers based on your specific care needs and preferences.",
   },
   {
     icon: CalendarCheck,

@@ -1,21 +1,7 @@
 import { motion } from "framer-motion";
-import { Baby, Stethoscope, GraduationCap, Heart, Home, Sparkles } from "lucide-react";
+import { Sparkles, Heart } from "lucide-react";
 
 const services = [
-  {
-    icon: Baby,
-    title: "Babysitting",
-    description: "Trusted sitters for infants to teens. Background-checked and CPR certified.",
-    price: "From ฿1,000/session",
-    color: "bg-coral-light text-primary",
-  },
-  {
-    icon: Stethoscope,
-    title: "Home Nursing",
-    description: "Licensed nurses for post-surgery recovery, elderly care, and health monitoring.",
-    price: "From ฿1,500/session",
-    color: "bg-teal-light text-secondary",
-  },
   {
     icon: Sparkles,
     title: "Special-Needs Training",
@@ -24,24 +10,10 @@ const services = [
     color: "bg-coral-light text-primary",
   },
   {
-    icon: GraduationCap,
-    title: "Tutoring",
-    description: "Academic support in math, science, languages, and exam prep at all levels.",
-    price: "From ฿800/session",
-    color: "bg-teal-light text-secondary",
-  },
-  {
     icon: Heart,
     title: "Elderly Care",
     description: "Compassionate companions for daily activities, medication reminders, and mobility support.",
     price: "From ฿1,200/session",
-    color: "bg-coral-light text-primary",
-  },
-  {
-    icon: Home,
-    title: "Housekeeping",
-    description: "Professional cleaners for regular upkeep, deep cleaning, and organized homes.",
-    price: "From ฿600/session",
     color: "bg-teal-light text-secondary",
   },
 ];
