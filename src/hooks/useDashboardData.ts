@@ -64,7 +64,7 @@ export const useDashboardData = (user: User | null) => {
   const fetchProfile = async () => {
     const { data } = await supabase
       .from("profiles")
-      .select("full_name, phone, avatar_url")
+      .select("full_name, phone, avatar_url, status")
       .eq("user_id", user!.id)
       .single();
     if (data) setProfile(data);

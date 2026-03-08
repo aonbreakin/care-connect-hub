@@ -54,13 +54,13 @@ const Auth = () => {
 
           if (roleError) console.error("Role insert error:", roleError);
 
-          // Update profile with phone
-          if (phone) {
-            await supabase
-              .from("profiles")
-              .update({ phone })
-              .eq("user_id", data.user.id);
-          }
+          // Update profile with phone and status
+          const profileUpdate: Record<string, string> = { status: role === "caregiver" ? "caregiver" : "member" };
+          if (phone) profileUpdate.phone = phone;
+          await supabase
+            .from("profiles")
+            .update(profileUpdate)
+            .eq("user_id", data.user.id);
         }
 
         toast({
