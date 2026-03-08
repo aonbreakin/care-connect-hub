@@ -14,6 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
+      bookings: {
+        Row: {
+          caregiver_id: string
+          created_at: string
+          duration_hours: number
+          family_id: string
+          id: string
+          notes: string | null
+          scheduled_date: string
+          scheduled_time: string
+          status: string
+          total_price: number
+          updated_at: string
+        }
+        Insert: {
+          caregiver_id: string
+          created_at?: string
+          duration_hours?: number
+          family_id: string
+          id?: string
+          notes?: string | null
+          scheduled_date: string
+          scheduled_time: string
+          status?: string
+          total_price?: number
+          updated_at?: string
+        }
+        Update: {
+          caregiver_id?: string
+          created_at?: string
+          duration_hours?: number
+          family_id?: string
+          id?: string
+          notes?: string | null
+          scheduled_date?: string
+          scheduled_time?: string
+          status?: string
+          total_price?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      caregiver_profiles: {
+        Row: {
+          available: boolean
+          bio: string | null
+          created_at: string
+          hourly_rate: number
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          available?: boolean
+          bio?: string | null
+          created_at?: string
+          hourly_rate?: number
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          available?: boolean
+          bio?: string | null
+          created_at?: string
+          hourly_rate?: number
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       certificate_rewards: {
         Row: {
           awarded_at: string
