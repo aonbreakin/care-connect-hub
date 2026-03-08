@@ -37,9 +37,9 @@ const Navbar = () => {
           <GoogleTranslate />
           {user ? (
             <>
-              <span className="text-sm text-muted-foreground">
-                {user.user_metadata?.full_name || user.email}
-              </span>
+             <Link to="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                {user.user_metadata?.full_name || "Dashboard"}
+              </Link>
               <Button variant="ghost" size="sm" onClick={handleSignOut}>
                 <LogOut className="w-4 h-4 mr-1" /> Log Out
               </Button>
@@ -67,9 +67,12 @@ const Navbar = () => {
           <a href="#how-it-works" className="block py-2 text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>How It Works</a>
           <div className="flex gap-2 pt-2">
             {user ? (
-              <Button variant="ghost" size="sm" className="flex-1" onClick={() => { handleSignOut(); setIsOpen(false); }}>
-                <LogOut className="w-4 h-4 mr-1" /> Log Out
-              </Button>
+              <>
+                <Link to="/dashboard" className="block py-2 text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Dashboard</Link>
+                <Button variant="ghost" size="sm" className="flex-1" onClick={() => { handleSignOut(); setIsOpen(false); }}>
+                  <LogOut className="w-4 h-4 mr-1" /> Log Out
+                </Button>
+              </>
             ) : (
               <>
                 <Button variant="ghost" size="sm" className="flex-1" onClick={() => { navigate("/auth"); setIsOpen(false); }}>Log In</Button>
