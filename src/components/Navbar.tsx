@@ -35,6 +35,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <GoogleTranslate />
           {user ? (
             <>
               <span className="text-sm text-muted-foreground">

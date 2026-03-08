@@ -19,13 +19,12 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Your Family's Care,{" "}
-              <span className="text-primary">Simplified</span>
+              The <span className="text-primary">Safest</span>, Most{" "}
+              <span className="text-secondary">Reliable</span> Care
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              Connect with verified babysitters, nurses, tutors, and home support professionals. 
-              AI-matched to your family's unique needs.
+              Safest. Reliable. Cost Effective. Connect with verified caregivers for children with disabilities, elderly support, and busy households — AI-matched to your family's needs.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
