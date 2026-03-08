@@ -37,9 +37,9 @@ const Navbar = () => {
           <GoogleTranslate />
           {user ? (
             <>
-              <span className="text-sm text-muted-foreground">
-                {user.user_metadata?.full_name || user.email}
-              </span>
+             <Link to="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                {user.user_metadata?.full_name || "Dashboard"}
+              </Link>
               <Button variant="ghost" size="sm" onClick={handleSignOut}>
                 <LogOut className="w-4 h-4 mr-1" /> Log Out
               </Button>
