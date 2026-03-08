@@ -46,7 +46,7 @@ export type CaregiverProfile = {
 };
 
 export const useDashboardData = (user: User | null) => {
-  const [profile, setProfile] = useState<Profile>({ full_name: null, phone: null, avatar_url: null });
+  const [profile, setProfile] = useState<Profile>({ full_name: null, phone: null, avatar_url: null, status: "member" });
   const [role, setRole] = useState<string | null>(null);
   const [certificates, setCertificates] = useState<Certificate[]>([]);
   const [rewards, setRewards] = useState<Reward[]>([]);
