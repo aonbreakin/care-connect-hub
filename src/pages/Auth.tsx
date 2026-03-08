@@ -129,7 +129,7 @@ const Auth = () => {
                           : "border-border text-muted-foreground hover:border-primary/30"
                       }`}
                     >
-                      👨‍👩‍👧 Family
+                      👨‍👩‍👧 Member
                     </button>
                     <button
                       type="button"
