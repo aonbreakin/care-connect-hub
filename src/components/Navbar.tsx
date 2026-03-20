@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Careverse logo" className="w-9 h-9 rounded-xl" />
-          <span className="font-display text-xl font-bold text-foreground">Careverse</span>
+          <span className="font-display text-xl font-bold text-foreground">Carethia</span>
         </Link>
 
         {/* Desktop Nav */}
