@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
                 <Heart className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="font-display text-lg font-bold text-background">Careverse</span>
+              <span className="font-display text-lg font-bold text-background">Carethia</span>
             </div>
             <p className="text-sm text-background/50 leading-relaxed">
               AI-powered home support platform connecting families with verified caregivers in Bangkok.
