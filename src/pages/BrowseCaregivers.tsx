@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search, SlidersHorizontal, Star, Shield, MapPin, BadgeCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -23,6 +26,9 @@ const BrowseCaregivers = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeService, setActiveService] = useState("All");
   const [showFilters, setShowFilters] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   const filtered = allCaregivers.filter((cg) => {
     const matchesSearch = cg.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -32,18 +38,33 @@ const BrowseCaregivers = () => {
     return matchesSearch && matchesService;
   });
 
+  const handleBookNow = (caregiverName: string) => {
+    if (!user) {
+      toast({
+        title: "Sign in required",
+        description: "Please create an account or sign in to book a caregiver.",
+      });
+      navigate("/auth");
+      return;
+    }
+    // Navigate to dashboard bookings tab
+    navigate("/dashboard");
+    toast({
+      title: `Booking ${caregiverName}`,
+      description: "You can manage your bookings from the dashboard.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-20 pb-12">
         <div className="container mx-auto px-4">
-          {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Find Your Perfect Caregiver</h1>
             <p className="text-muted-foreground">AI-matched, verified professionals ready to support your family.</p>
           </div>
 
-          {/* Search & Filters */}
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -69,7 +90,6 @@ const BrowseCaregivers = () => {
             </Button>
           </div>
 
-          {/* Service Filters */}
           <div className="flex flex-wrap gap-2 mb-8">
             {serviceFilters.map((s) => (
               <button
@@ -86,7 +106,6 @@ const BrowseCaregivers = () => {
             ))}
           </div>
 
-          {/* Results */}
           <p className="text-sm text-muted-foreground mb-4">{filtered.length} caregivers found</p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -138,7 +157,9 @@ const BrowseCaregivers = () => {
 
                 <div className="flex items-center justify-between pt-3 border-t border-border">
                   <span className="font-semibold text-foreground text-sm">฿{cg.price.toLocaleString()}</span>
-                  <Button variant="hero" size="sm" className="text-xs h-8">Book Now</Button>
+                  <Button variant="hero" size="sm" className="text-xs h-8" onClick={() => handleBookNow(cg.name)}>
+                    Book Now
+                  </Button>
                 </div>
               </motion.div>
             ))}

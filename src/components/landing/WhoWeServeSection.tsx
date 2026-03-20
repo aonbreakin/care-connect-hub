@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Accessibility, HeartHandshake, Briefcase, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const segments = [
   {
@@ -42,6 +43,8 @@ const segments = [
 ];
 
 const WhoWeServeSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="who-we-serve" className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -59,7 +62,7 @@ const WhoWeServeSection = () => {
             Safest. Reliable. Cost Effective.
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            CareVerse is built for families who need dependable, verified care — tailored to your unique situation.
+            Carethia is built for families who need dependable, verified care — tailored to your unique situation.
           </p>
         </motion.div>
 
@@ -90,8 +93,8 @@ const WhoWeServeSection = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="hero-outline" size="sm" className="w-full">
-                Learn More
+              <Button variant="hero-outline" size="sm" className="w-full" onClick={() => navigate("/browse")}>
+                Find Caregivers
               </Button>
             </motion.div>
           ))}

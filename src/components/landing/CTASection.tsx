@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CTASection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4">
@@ -20,13 +23,23 @@ const CTASection = () => {
               Ready to Find Trusted Care?
             </h2>
             <p className="text-primary-foreground/80 max-w-lg mx-auto mb-8 text-lg">
-              Join thousands of families in Bangkok who trust Careverse for reliable, AI-matched home support.
+              Join thousands of families in Bangkok who trust Carethia for reliable, AI-matched home support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-0 rounded-full font-semibold px-8 py-6 text-base">
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-0 rounded-full font-semibold px-8 py-6 text-base"
+                onClick={() => navigate("/auth")}
+              >
                 Get Started — It's Free
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full font-semibold px-8 py-6 text-base">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full font-semibold px-8 py-6 text-base"
+                onClick={() => navigate("/auth")}
+              >
                 Join as a Caregiver
               </Button>
             </div>
