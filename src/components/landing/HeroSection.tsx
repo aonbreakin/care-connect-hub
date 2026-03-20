@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Shield, Star, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-illustration.png";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden pt-16">
       <div className="container mx-auto px-4 py-16 lg:py-24">
@@ -28,10 +31,10 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button variant="hero" size="lg" className="text-base px-8 py-6">
+              <Button variant="hero" size="lg" className="text-base px-8 py-6" onClick={() => navigate("/browse")}>
                 Find a Caregiver
               </Button>
-              <Button variant="hero-outline" size="lg" className="text-base px-8 py-6">
+              <Button variant="hero-outline" size="lg" className="text-base px-8 py-6" onClick={() => navigate("/auth")}>
                 Become a Caregiver
               </Button>
             </div>
@@ -65,7 +68,6 @@ const HeroSection = () => {
                 className="w-full h-auto object-cover"
               />
             </div>
-            {/* Floating stat card */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}

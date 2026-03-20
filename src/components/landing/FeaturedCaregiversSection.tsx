@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, Shield, MapPin, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const caregivers = [
   {
@@ -40,6 +40,8 @@ const caregivers = [
 ];
 
 const FeaturedCaregiversSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 lg:py-28 bg-muted/50">
       <div className="container mx-auto px-4">
@@ -109,7 +111,7 @@ const FeaturedCaregiversSection = () => {
 
               <div className="flex items-center justify-between pt-4 border-t border-border">
                 <span className="font-semibold text-foreground">{cg.price}</span>
-                <Button variant="hero" size="sm">Book Now</Button>
+                <Button variant="hero" size="sm" onClick={() => navigate("/browse")}>Book Now</Button>
               </div>
             </motion.div>
           ))}

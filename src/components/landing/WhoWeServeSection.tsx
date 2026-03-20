@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Accessibility, HeartHandshake, Briefcase, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const segments = [
   {
@@ -42,6 +43,8 @@ const segments = [
 ];
 
 const WhoWeServeSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="who-we-serve" className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -90,8 +93,8 @@ const WhoWeServeSection = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="hero-outline" size="sm" className="w-full">
-                Learn More
+              <Button variant="hero-outline" size="sm" className="w-full" onClick={() => navigate("/browse")}>
+                Find Caregivers
               </Button>
             </motion.div>
           ))}
