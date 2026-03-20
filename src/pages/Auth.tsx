@@ -102,7 +102,7 @@ const Auth = () => {
             <Heart className="w-6 h-6 text-primary-foreground" />
           </div>
           <h1 className="font-display text-2xl font-bold text-foreground">
-            {mode === "login" ? "Welcome Back" : "Join Careverse"}
+            {mode === "login" ? "Welcome Back" : "Join Carethia"}
           </h1>
           <p className="text-muted-foreground mt-1">
             {mode === "login"

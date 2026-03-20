@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-background/10 pt-6 text-center text-xs text-background/40">
-          © 2026 Careverse. All rights reserved. Made with ❤️ in Bangkok.
+          © 2026 Carethia. All rights reserved. Made with ❤️ in Bangkok.
         </div>
       </div>
     </footer>

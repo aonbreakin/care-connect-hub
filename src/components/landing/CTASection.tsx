@@ -20,7 +20,7 @@ const CTASection = () => {
               Ready to Find Trusted Care?
             </h2>
             <p className="text-primary-foreground/80 max-w-lg mx-auto mb-8 text-lg">
-              Join thousands of families in Bangkok who trust Careverse for reliable, AI-matched home support.
+              Join thousands of families in Bangkok who trust Carethia for reliable, AI-matched home support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="outline" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-0 rounded-full font-semibold px-8 py-6 text-base">

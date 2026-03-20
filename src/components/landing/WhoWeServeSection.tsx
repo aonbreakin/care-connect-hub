@@ -59,7 +59,7 @@ const WhoWeServeSection = () => {
             Safest. Reliable. Cost Effective.
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            CareVerse is built for families who need dependable, verified care — tailored to your unique situation.
+            Carethia is built for families who need dependable, verified care — tailored to your unique situation.
           </p>
         </motion.div>
 
