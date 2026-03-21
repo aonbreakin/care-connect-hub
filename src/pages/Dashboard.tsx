@@ -194,6 +194,15 @@ const Dashboard = () => {
                 </TabsTrigger>
               </TabsList>
 
+              <div className="flex justify-end">
+                <Link to="/post-job">
+                  <Button variant="hero" size="sm" className="gap-1.5">
+                    <PlusCircle className="w-4 h-4" />
+                    Post a Job
+                  </Button>
+                </Link>
+              </div>
+
               <TabsContent value="bookings">
                 <MemberBookingsTab bookings={bookings} />
               </TabsContent>

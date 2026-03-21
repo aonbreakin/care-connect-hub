@@ -25,6 +25,7 @@ const App = () => (
             <Route path="/browse" element={<BrowseCaregivers />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/post-job" element={<PostJob />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
