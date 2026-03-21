@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
@@ -7,10 +7,11 @@ import { useDashboardData } from "@/hooks/useDashboardData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
-import { Camera, User, FileText, Award, CalendarDays, DollarSign, Inbox, Settings } from "lucide-react";
+import { Camera, User, FileText, Award, CalendarDays, DollarSign, Inbox, Settings, PlusCircle } from "lucide-react";
 
 import ProfileTab from "@/components/dashboard/ProfileTab";
 import CertificatesTab from "@/components/dashboard/CertificatesTab";
@@ -193,6 +194,15 @@ const Dashboard = () => {
                   <span className="hidden sm:inline">Badges</span>
                 </TabsTrigger>
               </TabsList>
+
+              <div className="flex justify-end">
+                <Link to="/post-job">
+                  <Button variant="hero" size="sm" className="gap-1.5">
+                    <PlusCircle className="w-4 h-4" />
+                    Post a Job
+                  </Button>
+                </Link>
+              </div>
 
               <TabsContent value="bookings">
                 <MemberBookingsTab bookings={bookings} />
