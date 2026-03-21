@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/hooks/use-toast";
-import { Camera, User, FileText, Award, CalendarDays, DollarSign, Inbox, Settings } from "lucide-react";
+import { Camera, User, FileText, Award, CalendarDays, DollarSign, Inbox, Settings, PlusCircle } from "lucide-react";
 
 import ProfileTab from "@/components/dashboard/ProfileTab";
 import CertificatesTab from "@/components/dashboard/CertificatesTab";
