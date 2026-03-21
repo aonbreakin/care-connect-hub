@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, Heart } from "lucide-react";
+import { Sparkles, Heart, Briefcase } from "lucide-react";
 
 const services = [
   {
@@ -15,6 +15,13 @@ const services = [
     description: "Compassionate companions for daily activities, medication reminders, and mobility support.",
     price: "From ฿1,200/session",
     color: "bg-teal-light text-secondary",
+  },
+  {
+    icon: Briefcase,
+    title: "Busy Household Support",
+    description: "On-demand trusted caregivers for working families who need reliable help at home.",
+    price: "From ฿800/session",
+    color: "bg-accent/20 text-accent-foreground",
   },
 ];
 

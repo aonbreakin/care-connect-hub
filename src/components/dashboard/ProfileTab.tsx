@@ -47,6 +47,12 @@ const ProfileTab = ({ user, profile, setProfile }: Props) => {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
+          <Label>Account Type</Label>
+          <div className="px-4 py-2.5 rounded-xl bg-muted border border-border text-sm font-medium text-foreground capitalize">
+            {profile.status === "caregiver" ? "🤝 Caregiver" : "👨‍👩‍👧 Member"}
+          </div>
+        </div>
+        <div className="space-y-2">
           <Label htmlFor="name">Full Name</Label>
           <div className="relative">
             <UserIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />

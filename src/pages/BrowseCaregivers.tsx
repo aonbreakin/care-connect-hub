@@ -10,17 +10,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const allCaregivers = [
-  { name: "Siriwan P.", role: "Babysitter & Tutor", rating: 4.9, reviews: 127, trustScore: 96, location: "Sukhumvit", specialties: ["Infant Care", "English Tutor", "CPR"], price: 1000, service: "Babysitting", avatar: "SP" },
   { name: "Nanthida K.", role: "Special-Needs Trainer", rating: 5.0, reviews: 84, trustScore: 99, location: "Silom", specialties: ["Autism", "Behavioral Therapy", "15yr Exp"], price: 2000, service: "Special-Needs Training", avatar: "NK" },
-  { name: "Pimchanok R.", role: "Home Nurse", rating: 4.8, reviews: 203, trustScore: 94, location: "Thonglor", specialties: ["Elderly Care", "Post-Surgery", "RN"], price: 1500, service: "Nursing", avatar: "PR" },
-  { name: "Kannika S.", role: "Housekeeper", rating: 4.7, reviews: 312, trustScore: 91, location: "Ari", specialties: ["Deep Cleaning", "Laundry", "Organizing"], price: 600, service: "Housekeeping", avatar: "KS" },
-  { name: "Wanida T.", role: "Math Tutor", rating: 4.9, reviews: 156, trustScore: 95, location: "Sathorn", specialties: ["K-12 Math", "SAT Prep", "Thai/English"], price: 800, service: "Tutoring", avatar: "WT" },
   { name: "Jintara M.", role: "Elderly Caregiver", rating: 4.8, reviews: 98, trustScore: 93, location: "Ekkamai", specialties: ["Mobility Support", "Medication", "Companion"], price: 1200, service: "Elderly Care", avatar: "JM" },
-  { name: "Rattana W.", role: "Babysitter", rating: 4.6, reviews: 67, trustScore: 88, location: "On Nut", specialties: ["Toddler Care", "Meal Prep", "Activities"], price: 900, service: "Babysitting", avatar: "RW" },
-  { name: "Supaporn L.", role: "Home Nurse", rating: 4.9, reviews: 178, trustScore: 97, location: "Phrom Phong", specialties: ["IV Therapy", "Wound Care", "Licensed RN"], price: 1800, service: "Nursing", avatar: "SL" },
+  { name: "Siriwan P.", role: "Household Support", rating: 4.9, reviews: 127, trustScore: 96, location: "Sukhumvit", specialties: ["Child Minding", "Household Tasks", "CPR"], price: 1000, service: "Busy Household Support", avatar: "SP" },
+  { name: "Pimchanok R.", role: "Elderly Care Specialist", rating: 4.8, reviews: 203, trustScore: 94, location: "Thonglor", specialties: ["Post-Surgery", "Daily Routines", "RN"], price: 1500, service: "Elderly Care", avatar: "PR" },
+  { name: "Kannika S.", role: "Special-Needs Trainer", rating: 4.7, reviews: 312, trustScore: 91, location: "Ari", specialties: ["ADHD Support", "Developmental Therapy", "Certified"], price: 1800, service: "Special-Needs Training", avatar: "KS" },
+  { name: "Supaporn L.", role: "Household Support", rating: 4.9, reviews: 178, trustScore: 97, location: "Phrom Phong", specialties: ["On-demand Care", "Meal Prep", "Trusted"], price: 900, service: "Busy Household Support", avatar: "SL" },
 ];
 
-const serviceFilters = ["All", "Babysitting", "Nursing", "Special-Needs Training", "Tutoring", "Elderly Care", "Housekeeping"];
+const serviceFilters = ["All", "Special-Needs Training", "Elderly Care", "Busy Household Support"];
 
 const BrowseCaregivers = () => {
   const [searchQuery, setSearchQuery] = useState("");
